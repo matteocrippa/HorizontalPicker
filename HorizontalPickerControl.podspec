@@ -1,7 +1,7 @@
 #  Be sure to run `pod spec lint HorizontalPicker.podspec' to ensure this is a
 
 Pod::Spec.new do |s|
-  s.name         = "HorizontalPicker"
+  s.name         = "HorizontalPickerControl"
   s.version      = "0.1.0"
   s.summary      = "A horizontal picker control for iOS written in Swift."
 
