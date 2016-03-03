@@ -21,7 +21,7 @@ More documentation coming soon.
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/acrookston/ACRKeyboardObserver.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/acrookston/HorizontalPicker.git", :tag => "0.1.0" }
   s.source_files = "HorizontalPicker/*.swift"
-  s.framework  = "UIKit"
+  s.framework    = "UIKit"
 end
