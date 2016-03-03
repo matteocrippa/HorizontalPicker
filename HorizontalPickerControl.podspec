@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "HorizontalPickerControl"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "A horizontal picker control for iOS written in Swift."
 
   s.description  = <<-DESC
@@ -21,7 +21,7 @@ More documentation coming soon.
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/acrookston/HorizontalPicker.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/acrookston/HorizontalPicker.git", :tag => "0.2.0" }
   s.source_files = "HorizontalPicker/*.swift"
   s.framework    = "UIKit"
 end
