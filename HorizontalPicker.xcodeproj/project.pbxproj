@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		A1EC167C1C80ED8600A264FA /* HorizontalPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EC167B1C80ED8600A264FA /* HorizontalPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1EC16861C8103E500A264FA /* HorizontalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC16851C8103E500A264FA /* HorizontalPicker.swift */; };
+		A1EC16881C81046200A264FA /* TouchPagedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC16871C81046200A264FA /* TouchPagedScrollView.swift */; };
+		A1EC168A1C812B9600A264FA /* HorizontalOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC16891C812B9600A264FA /* HorizontalOptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1EC16781C80ED8600A264FA /* HorizontalPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HorizontalPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC167B1C80ED8600A264FA /* HorizontalPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalPicker.h; sourceTree = "<group>"; };
 		A1EC167D1C80ED8700A264FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1EC16841C80FB6E00A264FA /* HorizontalPicker.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; name = HorizontalPicker.podspec; path = Pods/../HorizontalPicker.podspec; sourceTree = SOURCE_ROOT; };
+		A1EC16851C8103E500A264FA /* HorizontalPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalPicker.swift; sourceTree = "<group>"; };
+		A1EC16871C81046200A264FA /* TouchPagedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPagedScrollView.swift; sourceTree = "<group>"; };
+		A1EC16891C812B9600A264FA /* HorizontalOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalOptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +55,10 @@
 			children = (
 				A1EC167B1C80ED8600A264FA /* HorizontalPicker.h */,
 				A1EC167D1C80ED8700A264FA /* Info.plist */,
+				A1EC16841C80FB6E00A264FA /* HorizontalPicker.podspec */,
+				A1EC16851C8103E500A264FA /* HorizontalPicker.swift */,
+				A1EC16871C81046200A264FA /* TouchPagedScrollView.swift */,
+				A1EC16891C812B9600A264FA /* HorizontalOptionView.swift */,
 			);
 			path = HorizontalPicker;
 			sourceTree = "<group>";
@@ -130,6 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EC16861C8103E500A264FA /* HorizontalPicker.swift in Sources */,
+				A1EC168A1C812B9600A264FA /* HorizontalOptionView.swift in Sources */,
+				A1EC16881C81046200A264FA /* TouchPagedScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +242,7 @@
 		A1EC16811C80ED8700A264FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +253,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = se.casystems.HorizontalPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A1EC16821C80ED8700A264FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -276,6 +293,7 @@
 				A1EC16821C80ED8700A264FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
