@@ -69,7 +69,6 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         updateScrollViewFrame()
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: CGFloat(count + 1) * size.width, height: size.height)
-        print("size", visiblePages, scrollView.frame, scrollView.contentSize)
 
         for ix in 0...count {
             let view = delegate.horizontalPickerOptionView(ix)
@@ -80,8 +79,6 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         }
         addSubview(scrollView)
         selectOption(defaultPage, animated: false)
-//        scrollView.scrollRectToVisible(rectForOption(defaultPage), animated: false)
-//        selectPage(currentPage)
     }
 
     override public func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
