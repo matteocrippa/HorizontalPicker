@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "HorizontalPickerControl"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "A horizontal picker control for iOS written in Swift."
 
   s.description  = <<-DESC
