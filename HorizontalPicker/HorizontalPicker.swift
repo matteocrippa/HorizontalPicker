@@ -33,6 +33,7 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
                 abort()
             }
         }
+        didSet { updateScrollViewFrame() }
     }
     public weak var delegate : HorizontalPickerDelegate? {
         didSet { setup() }
@@ -65,8 +66,8 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
 
         pageWidth = size.width
 
+        updateScrollViewFrame()
         scrollView.delegate = self
-        scrollView.frame = CGRect(x: pageWidth * CGFloat(Int(visiblePages / 2)), y: 0, width: pageWidth, height: self.bounds.size.height)
         scrollView.contentSize = CGSize(width: CGFloat(count + 1) * size.width, height: size.height)
         print("size", visiblePages, scrollView.frame, scrollView.contentSize)
 
@@ -87,6 +88,10 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         // This hittest allows the user to start scrolling from outside the scrollview's bounds.
         // ie the views next to the current page, which are outside but visible thanks to clipsToBounds.
         return pointInside(point, withEvent: event) ? scrollView : nil
+    }
+
+    private func updateScrollViewFrame() {
+        scrollView.frame = CGRect(x: pageWidth * CGFloat(Int((visiblePages) / 2)), y: 0, width: pageWidth, height: self.bounds.size.height)
     }
 
     // MARK: - UIScrollViewDelegate
