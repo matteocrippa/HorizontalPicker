@@ -30,6 +30,10 @@ class TouchPagedScrollView: UIScrollView {
     }
 
     func setup() {
+        pagingEnabled = true
+        showsHorizontalScrollIndicator = false
+        clipsToBounds = false
+        decelerationRate = 0.1
         tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         addGestureRecognizer(tapGesture!)
     }

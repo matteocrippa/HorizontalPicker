@@ -42,14 +42,7 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
     private var previousPage : Int = -1 // Can't be same as currentPage
     private var pageWidth : CGFloat = 1
 
-    private var scrollView : TouchPagedScrollView = {
-        let scrollView = TouchPagedScrollView(frame: CGRect.zero)
-        scrollView.pagingEnabled = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.clipsToBounds = false
-        scrollView.decelerationRate = 0.1
-        return scrollView
-    }()
+    private var scrollView : TouchPagedScrollView = { return TouchPagedScrollView(frame: CGRect.zero) }()
 
 
     // MARK: - Init / Setup
