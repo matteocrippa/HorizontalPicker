@@ -14,10 +14,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A16947371C99C8EE0004B0FA /* HorizontalPickerControl.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HorizontalPickerControl.podspec; sourceTree = SOURCE_ROOT; };
 		A1EC16781C80ED8600A264FA /* HorizontalPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HorizontalPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC167B1C80ED8600A264FA /* HorizontalPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalPicker.h; sourceTree = "<group>"; };
 		A1EC167D1C80ED8700A264FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1EC16841C80FB6E00A264FA /* HorizontalPicker.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; name = HorizontalPicker.podspec; path = Pods/../HorizontalPicker.podspec; sourceTree = SOURCE_ROOT; };
 		A1EC16851C8103E500A264FA /* HorizontalPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalPicker.swift; sourceTree = "<group>"; };
 		A1EC16871C81046200A264FA /* TouchPagedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPagedScrollView.swift; sourceTree = "<group>"; };
 		A1EC16891C812B9600A264FA /* HorizontalOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalOptionView.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			children = (
 				A1EC167B1C80ED8600A264FA /* HorizontalPicker.h */,
 				A1EC167D1C80ED8700A264FA /* Info.plist */,
-				A1EC16841C80FB6E00A264FA /* HorizontalPicker.podspec */,
+				A16947371C99C8EE0004B0FA /* HorizontalPickerControl.podspec */,
 				A1EC16851C8103E500A264FA /* HorizontalPicker.swift */,
 				A1EC16871C81046200A264FA /* TouchPagedScrollView.swift */,
 				A1EC16891C812B9600A264FA /* HorizontalOptionView.swift */,
