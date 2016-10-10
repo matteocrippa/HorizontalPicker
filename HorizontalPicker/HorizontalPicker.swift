@@ -9,24 +9,24 @@
 import UIKit
 
 public protocol HorizontalPickerDelegate : class {
-    func horizontalPickerOptionSelected(index: Int)
+    func horizontalPickerOptionSelected(_ index: Int)
     func horizontalPickerOptionViewCount() -> Int
     func horizontalPickerOptionViewSize() -> CGSize
-    func horizontalPickerOptionView(index: Int) -> HorizontalOptionView
+    func horizontalPickerOptionView(_ index: Int) -> HorizontalOptionView
 }
 
 public protocol HorizontalPickerOptionViewDelegate : class {
-    func selectOption(index: Int)
-    func selectOption(index: Int, animated: Bool)
+    func selectOption(_ index: Int)
+    func selectOption(_ index: Int, animated: Bool)
 }
 
-public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOptionViewDelegate {
+open class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOptionViewDelegate {
 
-    public var defaultPage = 0 {
+    open var defaultPage = 0 {
         didSet { selectOption(defaultPage) }
     }
 
-    public var visiblePages = 5 {
+    open var visiblePages = 5 {
         willSet {
             if newValue % 2 == 0 {
                 print("HorizontalPicker#visibleViews must be an odd number")
@@ -35,15 +35,15 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         }
         didSet { updateScrollViewFrame() }
     }
-    public weak var delegate : HorizontalPickerDelegate? {
+    open weak var delegate : HorizontalPickerDelegate? {
         didSet { setup() }
     }
 
-    private var currentPage = 0
-    private var previousPage : Int = -1 // Can't be same as currentPage
-    private var pageWidth : CGFloat = 1
+    fileprivate var currentPage = 0
+    fileprivate var previousPage : Int = -1 // Can't be same as currentPage
+    fileprivate var pageWidth : CGFloat = 1
 
-    private var scrollView : TouchPagedScrollView = { return TouchPagedScrollView(frame: CGRect.zero) }()
+    fileprivate var scrollView : TouchPagedScrollView = { return TouchPagedScrollView(frame: CGRect.zero) }()
 
 
     // MARK: - Init / Setup
@@ -58,7 +58,7 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         guard let delegate = self.delegate else { return }
 
         let size = delegate.horizontalPickerOptionViewSize()
@@ -81,23 +81,23 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
         selectOption(defaultPage, animated: false)
     }
 
-    override public func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // This hittest allows the user to start scrolling from outside the scrollview's bounds.
         // ie the views next to the current page, which are outside but visible thanks to clipsToBounds.
-        return pointInside(point, withEvent: event) ? scrollView : nil
+        return self.point(inside: point, with: event) ? scrollView : nil
     }
 
-    private func updateScrollViewFrame() {
+    fileprivate func updateScrollViewFrame() {
         scrollView.frame = CGRect(x: pageWidth * CGFloat(Int((visiblePages) / 2)), y: 0, width: pageWidth, height: self.bounds.size.height)
     }
 
     // MARK: - UIScrollViewDelegate
 
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         selectPage(Int(round(scrollView.contentOffset.x / pageWidth)))
     }
 
-    private func selectPage(page: Int) {
+    fileprivate func selectPage(_ page: Int) {
         if page != previousPage {
             currentPage = page
 
@@ -126,18 +126,18 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
 
     // MARK: HorizontalPageOptionDelegate
 
-    private func rectForOption(index: Int) -> CGRect {
+    fileprivate func rectForOption(_ index: Int) -> CGRect {
         if index >= 0 && scrollView.subviews.count > index {
             return scrollView.subviews[index].frame
         }
         return CGRect.zero
     }
 
-    public func selectOption(index: Int) {
+    open func selectOption(_ index: Int) {
         selectOption(index, animated: true)
     }
 
-    public func selectOption(index: Int, animated: Bool) {
+    open func selectOption(_ index: Int, animated: Bool) {
         scrollView.scrollRectToVisible(rectForOption(index), animated: animated)
         selectPage(currentPage)
     }

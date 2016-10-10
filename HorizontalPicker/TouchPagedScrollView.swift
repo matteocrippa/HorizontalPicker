@@ -30,21 +30,21 @@ class TouchPagedScrollView: UIScrollView {
     }
 
     func setup() {
-        pagingEnabled = true
+        isPagingEnabled = true
         showsHorizontalScrollIndicator = false
         clipsToBounds = false
         decelerationRate = 0.1
-        tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(TouchPagedScrollView.handleTap(_:)))
         addGestureRecognizer(tapGesture!)
     }
 
-    func handleTap(tap: UITapGestureRecognizer) {
+    func handleTap(_ tap: UITapGestureRecognizer) {
 
-        let point = tap.locationInView(self)
+        let point = tap.location(in: self)
 
         for view in subviews {
-            let viewRect = convertRect(view.frame, toView: self)
-            if CGRectContainsPoint(viewRect, point) {
+            let viewRect = convert(view.frame, to: self)
+            if viewRect.contains(point) {
                 if let optionView = view as? HorizontalOptionView {
                     optionView.optionTapped()
                 }
