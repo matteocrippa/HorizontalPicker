@@ -1,3 +1,6 @@
+### 0.3.0
+
+* Swift 3.0 support (for 2.2 see tag: `swift-2.2`)
 
 ### 0.2.1
 
