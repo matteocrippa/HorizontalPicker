@@ -70,7 +70,7 @@ public class HorizontalPicker : UIView, UIScrollViewDelegate, HorizontalPickerOp
     scrollView.delegate = self
     scrollView.contentSize = CGSize(width: CGFloat(count + 1) * size.width, height: size.height)
     
-    for ix in 0...count {
+    for ix in 0..<count {
       let view = delegate.horizontalPickerOptionView(index: ix)
       view.frame = CGRect(x: CGFloat(ix) * size.width, y: 0, width: size.width, height: size.height)
       view.index = ix
