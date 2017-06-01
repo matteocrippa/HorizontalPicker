@@ -9,15 +9,15 @@
 import UIKit
 
 public protocol HorizontalOptionViewProtocol : class {
-    func optionSelected()
-    func optionDeselected(_ offset: Int)
+  func optionSelected()
+  func optionDeselected(offset: Int)
 }
 
-open class HorizontalOptionView : UIView {
-    var index : Int = 0
-    weak var pickerDelegate : HorizontalPickerOptionViewDelegate?
-
-    func optionTapped() {
-        pickerDelegate?.selectOption(index)
-    }
+public class HorizontalOptionView : UIView {
+  var index : Int = 0
+  weak var pickerDelegate : HorizontalPickerOptionViewDelegate?
+  
+  func optionTapped() {
+    pickerDelegate?.selectOption(index: index)
+  }
 }
